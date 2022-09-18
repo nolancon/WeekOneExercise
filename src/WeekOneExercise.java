@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class WeekOneExercise {
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         if (didOswaldActAlone()){
             System.out.println("Oswald acted alone.");
@@ -15,29 +16,26 @@ public class WeekOneExercise {
             System.out.println("OJ was innocent.");
         }
 
-        System.out.println(filmRating(favouriteFilm()));
+        String favouriteFilm = favouriteFilm();
+        System.out.println(favouriteFilm +" is rated: " + filmRating(favouriteFilm));
     }
-    private static boolean didOswaldActAlone() {
-        Scanner sc = new Scanner(System.in);
+    public static boolean didOswaldActAlone() {
         System.out.println("Did Oswald act alone?");
         return sc.nextBoolean();
     }
 
-    private boolean wasOjGuilty() {
-        Scanner sc = new Scanner(System.in);
+    public boolean wasOjGuilty() {
         System.out.println("Was OJ guilty?");
         return sc.nextBoolean();
     }
 
-    private static String favouriteFilm() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Name your favourite film.");
+    public static String favouriteFilm() {
+        System.out.println("Name your favourite film:");
         return sc.next();
     }
 
-    private static String filmRating(String filmName) {
-        Scanner sc = new Scanner(System.in);
+    public static int filmRating(String filmName) {
         System.out.println("Enter film rating:");
-        return filmName + " Rating: " + sc.next();
+        return sc.nextInt();
     }
 }
